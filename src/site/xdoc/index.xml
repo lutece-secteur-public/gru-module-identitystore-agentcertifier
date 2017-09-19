@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Module IdentityStore pour certification Agent (module-identitystore-agentcertifier)</title>
+    </properties>
+    <body>
+        <section name="Module IdentityStore pour certification Agent (module-identitystore-agentcertifier)">
+  
+            <subsection name="Introduction">
+                <p>
+                    Ce plugin permet de certifier dans IdentityStore les attributs d'un usager par un Agent.
+                </p>
+                <p>
+                    Ce plugin traite au niveau d'IdentityStore les demandes de 
+                    certification envoyées par un agent (plugin-agentcertifier) via l'API.
+                    <ul>
+                        <li>Genre (gender)</li>
+                        <li>Nom usuel (preferred_username)</li>
+                        <li>Nom de naissance (family_name)</li>
+                        <li>Prénoms (given_name)</li>
+                        <li>Date de naissance (birthdate) au format DD-MM-YYYY</li>
+                        <li>Lieu de naissance (birthplace)</li>
+                        <li>Pays de naissance (birthcountry)</li>
+                        <li>Adresse (address)</li>
+                        <li>Complément d'adresse (address_detail)</li>
+                        <li>Code postal (address_postal_code)</li>
+                        <li>Ville (address_city)</li>
+                    </ul>
+                </p>
+                <p>
+                    Ce plugin peut notifier la GRU des mises à jour réalisées. 
+                </p>
+            </subsection>
+            <subsection name="Configuration">
+                <p>
+                    Ce service de certification est détecté automatiquement par IdentityStore
+                    grâce à la découverte du composant CertifierService déclaré dans
+                    le fichier contexte.
+                </p>
+                <p>
+                    Sont à configurer dans le fichier contexte :
+                    <ul>
+                        <li>Le paramétrage du module de notification</li>
+                    </ul>
+                </p>
+            </subsection>
+        </section>
+    </body>
+</document>
+

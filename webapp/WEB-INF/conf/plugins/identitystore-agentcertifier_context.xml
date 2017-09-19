@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+    
+    <!-- Certifier -->
+    <bean id="identitystore-agentcertifier.certifier" class="fr.paris.lutece.plugins.identitystore.modules.agentcertifier.service.certifier.AgentCertifier" >
+        <constructor-arg type="java.lang.String" value = "agentcertifier"/>
+        <property name="name" value="Agent Certifier" />
+        <property name="description" value="Certificateur d'attributs par les Agents" />
+        <property name="certificateLevel" value="2" />
+        <property name="expirationDelay" value="-1" />
+        <property name="iconUrl" value="images/admin/skin/plugins/identitystore/modules/agentcertifier/agentcertifier.png" />
+        <property name="certifiableAttributesList">
+            <list>
+                <value>gender</value>
+                <value>preferred_username</value>
+                <value>family_name</value>
+                <value>first_name</value>
+                <value>birthdate</value>
+                <value>birthplace</value>
+                <value>birthcountry</value>
+                <value>address</value>
+                <value>address_detail</value>
+                <value>address_postal_code</value>
+                <value>address_city</value>
+            </list>
+        </property>
+        <property name="idDemandType" value="403" />
+        <property name="idCloseCrmStatus" value="1" />
+        <property name="idCloseDemandStatus" value="1" />
+        <property name="demandPrefix" value="AGC" />
+        <property name="notificationService">
+            <ref bean="identitystore-grucertifier.lib-notifygru.notificationService"/>
+        </property>
+    </bean>
+    
+</beans>
